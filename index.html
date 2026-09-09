@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Daily Report</title>
+</head>
+<body>
+
+  <h1>Daily Report</h1>
+
+  <form id="reportForm">
+
+    <p>
+      <label>Date</label><br>
+      <input
+        type="date"
+        id="date"
+        required
+      >
+    </p>
+
+    <p>
+      <label>Shift</label><br>
+      <select id="shift" required>
+        <option value="">-- Select Shift --</option>
+        <option value="DAY">DAY</option>
+        <option value="Night">Night</option>
+      </select>
+    </p>
+
+    <p>
+      <label>Line</label><br>
+      <select id="line" required>
+        <option value="">-- Select Line --</option>
+        <option value="J17">J17</option>
+        <option value="K27">K27</option>
+      </select>
+    </p>
+
+    <p>
+      <label>Model</label><br>
+        <select id="model" required>
+        <option value="">-- Select Model --</option>
+        </select>
+    </p>
+
+    <p>
+      <label>Machine</label><br>
+      <select id="machine" required>
+        <option value="">-- Select Machine --</option>
+        <option value="BFT">BFT</option>
+        </select>
+    </p>
+
+    <p>
+      <label>Pass / OK</label><br>
+      <input
+        type="number"
+        id="pass"
+        min="0"
+        required
+      >
+    </p>
+
+    <p>
+      <label>Fail / NG</label><br>
+      <input
+        type="number"
+        id="fail"
+        min="0"
+        required
+      >
+    </p>
+
+    <p>
+      <label>WIP</label><br>
+      <input
+        type="number"
+        id="wip"
+        min="0"
+        required
+      >
+    </p>
+
+    <p>
+      <label>Issue / ปัญหา</label><br>
+        <textarea
+            id="issue"
+            rows="6"
+            placeholder="ตัวอย่าง:
+            1. Sensor Error
+            2. Barcode อ่านไม่ได้
+            3. Jig มีปัญหา"
+        ></textarea>
+    </p>
+
+    <p>
+      <label>วิธีแก้</label><br>
+        <textarea
+            id="solution"
+            rows="6"
+            placeholder="ตัวอย่าง:
+            1. Reset Sensor และตรวจสาย
+            2. ทำความสะอาด Scanner
+            3. ปรับตำแหน่ง Jig"
+        ></textarea>
+    </p>
+
+    <p>
+      <label>เวลาในการแก้</label><br>
+      <input
+        type="text"
+        id="fixTime"
+      >
+    </p>
+    <p>
+  <label>รูปภาพ</label><br>
+
+  <input
+    type="file"
+    id="images"
+    accept="image/jpeg,image/png"
+    multiple
+  >
+    </p>
+<button
+  type="button"
+  id="clearImagesButton"
+  style="display: none;"
+>
+  ล้างรูป
+</button>
+    <p>
+  <label>ตัวอย่างรูป</label><br>
+
+  <canvas
+    id="collageCanvas"
+    style="max-width: 100%; border: 1px solid #ccc;"
+  ></canvas>
+    </p>
+
+    <p>
+      <label>Remark</label><br>
+      <textarea
+        id="remark"
+        rows="4"
+        placeholder="หมายเหตุเพิ่มเติม"
+        ></textarea>
+    </p>
+
+    <p>
+      <button type="submit" 
+      id="submitButton">
+        Submit
+      </button>
+    </p>
+
+  </form>
+  <script src="app.js"></script>
+</body>
+
+</html>
